@@ -4,118 +4,571 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rylan Stalnaker | Cybersecurity Portfolio</title>
+  <meta name="description" content="Rylan Stalnaker — Aspiring SOC Analyst. Cybersecurity portfolio featuring Active Directory lab work, TryHackMe write-ups, and certifications." />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0e1a2b;
-      color: #e0e0e0;
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --muted-2: rgba(255,255,255,0.60);
+      --border: rgba(255,255,255,0.12);
+      --accent: #7eead8;
+      --accent-2: #9fd3c7;
+      --shadow: 0 18px 40px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --max: 1060px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
       margin: 0;
-      padding: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(126,234,216,0.12), transparent 55%),
+        radial-gradient(900px 500px at 80% 10%, rgba(159,211,199,0.10), transparent 50%),
+        radial-gradient(900px 700px at 50% 100%, rgba(126,234,216,0.06), transparent 60%),
+        var(--bg);
+      line-height: 1.55;
     }
-    header {
-      background-color: #142d4c;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #9fd3c7;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    a {
-      color: #9fd3c7;
+
+    a{
+      color: var(--accent);
       text-decoration: none;
     }
-    .project, .cert {
-      margin-bottom: 1rem;
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 64px;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #142d4c;
-      color: #9fd3c7;
+
+    /* Top nav */
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
     }
-    .button {
-      display: inline-block;
-      background: #9fd3c7;
-      color: #0e1a2b;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      margin-top: 1rem;
-      font-weight: bold;
+    .nav .brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      letter-spacing: 0.2px;
+      color: var(--text);
     }
-    .button:hover {
-      background: #b8fff1;
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(126,234,216,0.12);
+      flex: 0 0 auto;
+    }
+    .nav .links{
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav .links a{
+      color: var(--muted);
+      font-weight: 560;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+    .nav .links a:hover{
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,0.04);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      padding: 42px 18px 18px;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: start;
+    }
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; padding: 28px 6px 10px; }
+    }
+
+    .hero-card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .kicker{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    h1{
+      margin: 14px 0 8px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      letter-spacing: -0.6px;
+    }
+    .subhead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16.5px;
+      max-width: 62ch;
+    }
+    .cta{
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(126,234,216,0.20), rgba(159,211,199,0.12));
+      border-color: rgba(126,234,216,0.35);
+    }
+    .btn.primary:hover{
+      background: linear-gradient(135deg, rgba(126,234,216,0.28), rgba(159,211,199,0.14));
+    }
+
+    .side{
+      display: grid;
+      gap: 12px;
+    }
+    .mini{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.035);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .mini h3{
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 750;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .mini p{
+      margin: 0;
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14.5px;
+    }
+    .mini .small{
+      margin-top: 6px;
+      color: var(--muted-2);
+      font-weight: 550;
+      font-size: 13.5px;
+    }
+
+    /* Sections */
+    section{
+      margin-top: 22px;
+      padding: 0 6px;
+    }
+    .section-title{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 26px 0 12px;
+    }
+    .section-title h2{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+    .section-title .hint{
+      color: var(--muted-2);
+      font-size: 13.5px;
+      font-weight: 550;
+    }
+
+    .grid{
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .card.soft{
+      background: rgba(255,255,255,0.03);
+    }
+    .span-6{ grid-column: span 6; }
+    .span-4{ grid-column: span 4; }
+    .span-8{ grid-column: span 8; }
+    .span-12{ grid-column: span 12; }
+    @media (max-width: 920px){
+      .span-6, .span-4, .span-8{ grid-column: span 12; }
+    }
+
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: 0.1px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .pillrow{
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill{
+      font-size: 12.5px;
+      font-weight: 650;
+      color: rgba(255,255,255,0.82);
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .list li{ margin: 6px 0; }
+
+    .split{
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 920px){
+      .split{ grid-template-columns: 1fr; }
+    }
+
+    footer{
+      margin-top: 36px;
+      padding: 18px 6px 0;
+      color: var(--muted-2);
+      font-size: 13.5px;
+      border-top: 1px solid var(--border);
+    }
+    .footrow{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 0 0;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Rylan Stalnaker</h1>
-    <p>Cybersecurity Student | Aspiring SOC Analyst | CompTIA Certified</p>
-  </header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Rylan Stalnaker</span>
+      </div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certs">Certifications</a>
+        <a href="#resume">Resume</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </div>
 
-  <section>
-    <h2>✨ Featured Projects</h2>
-    <div class="project">
-      <strong><a href="https://github.com/Rylandale515/tryhackme-writeups">TryHackMe Write-Ups</a></strong>
-      <p>Detailed and structured walkthroughs of rooms from the SOC Level 1 and Cybersecurity 101 paths.</p>
-    </div>
-    <div class="project">
-      <strong><a href="https://github.com/Rylandale515/AD-User-Management">Active Directory User Management</a></strong>
-      <p>PowerShell-driven creation of 1,000+ users and configuration of dual-NIC domain controller using Windows Server 2019.</p>
-    </div>
-  </section>
+    <div class="hero" id="top">
+      <div class="hero-card">
+        <div class="kicker">Aspiring SOC Analyst • Cybersecurity & IT • Oklahoma</div>
+        <h1>Defensive-focused cybersecurity portfolio</h1>
+        <p class="subhead">
+          Cybersecurity-focused IT professional pursuing a B.S. in Cybersecurity and Information Assurance at Western Governors University
+          (expected March 2026). Hands-on experience through labs and documentation that emphasize investigation methodology,
+          systems fundamentals, and security-minded troubleshooting.
+        </p>
 
-  <section>
-    <h2>📄 Resume</h2>
-    <a href="assets/Rylan_Stalnaker_Resume.pdf" class="button" download>Download My Resume (PDF)</a>
-  </section>
+        <div class="cta">
+          <!-- Update this path to match your repo -->
+          <a class="btn primary" href="assets/Rylan_Stalnaker_Resume.pdf" download>Download Resume (PDF)</a>
+          <a class="btn" href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/Rylandale515" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
 
-  <section>
-    <h2>📝 Certifications</h2>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/8233d4c9-208d-4504-9d3d-0d07ac6722d9/public_url">CompTIA A+</a>
-    </div>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/201270ac-617d-45cd-a5d9-486265be596b/public_url">Network+</a>
-    </div>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/803b30b7-584c-4fa1-a66c-4de590344baf/public_url">CIOS</a>
-    </div>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/320fa07d-caed-45da-933d-b92d07b4963d/public_url">Security+</a>
-    </div>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/489aa74c-e92c-4db0-8aed-58888017214d/public_url">CSIS</a>
-    </div>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/1afba32d-58d8-4207-9ef4-0cdf3eb5474a/public_url">Linux Essentials</a>
-    </div>
-    <div class="cert">
-      <a href="https://www.credly.com/badges/3c30f03e-2fe2-4f76-a116-e71edbff45fd/public_url">Associate of ISC2 (SSCP)</a>
-    </div>
-    <div class="cert">
-      <a href="">Project+</a>
-    </div>
-  </section>
+      <div class="side">
+        <div class="mini">
+          <h3>Focus</h3>
+          <p>Security monitoring and SOC fundamentals</p>
+          <div class="small">Incident response concepts • vulnerability awareness • documentation discipline</div>
+        </div>
 
-  <section>
-    <h2>💎 Connect</h2>
-    <p><a href="mailto:rylan.stalnaker.cyber@gmail.com">Email Me</a> | <a href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/">LinkedIn</a> | <a href="https://github.com/Rylandale515">GitHub</a></p>
-  </section>
+        <div class="mini">
+          <h3>Strengths</h3>
+          <p>Systems + networking foundations</p>
+          <div class="small">Windows Server / Active Directory • Linux fundamentals • troubleshooting</div>
+        </div>
 
-  <footer>
-    &copy; 2025 Rylan Stalnaker. Built with <3 on GitHub Pages.
-  </footer>
+        <div class="mini">
+          <h3>Availability</h3>
+          <p>Open to remote / hybrid opportunities</p>
+          <div class="small">Entry-level SOC Analyst • Junior Security Analyst</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+        <div class="hint">Curated highlights — case-study style</div>
+      </div>
+
+      <div class="grid">
+        <div class="card span-6">
+          <h3>
+            <a href="https://github.com/Rylandale515/AD-User-Management" target="_blank" rel="noreferrer">
+              Active Directory Identity & Access Management Lab
+            </a>
+          </h3>
+          <p>
+            Built a Windows Server 2019 Active Directory environment in Oracle VirtualBox to simulate enterprise identity operations.
+            Configured DNS/DHCP/NAT and automated user provisioning at scale using PowerShell. Documented troubleshooting steps
+            (including DNS routing issues) to reinforce secure domain administration patterns.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Windows Server 2019</span>
+            <span class="pill">Active Directory</span>
+            <span class="pill">DNS / DHCP</span>
+            <span class="pill">NAT / RRAS</span>
+            <span class="pill">PowerShell</span>
+            <span class="pill">VirtualBox</span>
+          </div>
+          <ul class="list">
+            <li>Automated creation of 1,000+ users (lab simulation) with consistent naming and provisioning logic.</li>
+            <li>Validated domain join and authentication from a Windows 10 client.</li>
+            <li>Resolved misconfiguration impacting DNS/internet connectivity to restore expected network behavior.</li>
+          </ul>
+        </div>
+
+        <div class="card span-6">
+          <h3>
+            <a href="https://github.com/Rylandale515/THM-Write-Ups" target="_blank" rel="noreferrer">
+              TryHackMe SOC & Cyber Defense Write-Ups
+            </a>
+          </h3>
+          <p>
+            A repository of structured lab walkthroughs aligned to SOC workflows—focused on investigation methodology, network/service
+            enumeration, adversary tooling awareness, and defensive takeaways. Each write-up emphasizes clear steps, evidence, and lessons learned.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Investigation workflow</span>
+            <span class="pill">Enumeration</span>
+            <span class="pill">Adversary tooling (lab)</span>
+            <span class="pill">Documentation</span>
+            <span class="pill">Defensive takeaways</span>
+          </div>
+          <ul class="list">
+            <li>Consistent write-up format: objectives → tools → evidence → takeaways.</li>
+            <li>Designed to be readable by both technical and non-technical audiences.</li>
+            <li>Focuses on repeatable process over “just getting the flag.”</li>
+          </ul>
+        </div>
+
+        <div class="card soft span-12">
+          <h3>What I’m building next</h3>
+          <p>
+            I’m continuing to add SOC-focused projects that simulate real monitoring and response work. The goal is to translate hands-on labs
+            into job-ready workflows: evidence collection, clear reporting, and defensive reasoning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Core Skills</h2>
+        <div class="hint">Curated — built for recruiters and ATS</div>
+      </div>
+
+      <div class="grid">
+        <div class="card span-4">
+          <h3>Security Operations</h3>
+          <p>Foundational SOC-aligned knowledge and lab experience.</p>
+          <ul class="list">
+            <li>Incident response concepts</li>
+            <li>Security monitoring fundamentals</li>
+            <li>Vulnerability assessment awareness</li>
+            <li>Threat analysis mindset (lab context)</li>
+          </ul>
+        </div>
+
+        <div class="card span-4">
+          <h3>Systems & Identity</h3>
+          <p>Hands-on with Windows environments and identity administration.</p>
+          <ul class="list">
+            <li>Windows Server 2019 administration</li>
+            <li>Active Directory users/groups (lab)</li>
+            <li>Authentication / authorization concepts</li>
+            <li>Linux fundamentals and CLI usage</li>
+          </ul>
+        </div>
+
+        <div class="card span-4">
+          <h3>Networking & Tooling</h3>
+          <p>Strong fundamentals that translate well to SOC triage.</p>
+          <ul class="list">
+            <li>TCP/IP, DNS, DHCP, SMB, SSH</li>
+            <li>Service enumeration fundamentals</li>
+            <li>Nmap (lab)</li>
+            <li>Metasploit familiarity (lab)</li>
+          </ul>
+        </div>
+
+        <div class="card soft span-12">
+          <h3>Documentation & Communication</h3>
+          <p>
+            I prioritize clear documentation and repeatable methods—writing findings so they’re useful to both technical teams
+            and stakeholders. (This aligns with how real SOC work is handed off between shifts and teams.)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certs">
+      <div class="section-title">
+        <h2>Certifications</h2>
+        <div class="hint">Verified via Credly where available</div>
+      </div>
+
+      <div class="grid">
+        <div class="card span-6">
+          <h3>Core Certifications</h3>
+          <ul class="list">
+            <li><a href="https://www.credly.com/badges/8233d4c9-208d-4504-9d3d-0d07ac6722d9/public_url" target="_blank" rel="noreferrer">CompTIA A+</a></li>
+            <li><a href="https://www.credly.com/badges/201270ac-617d-45cd-a5d9-486265be596b/public_url" target="_blank" rel="noreferrer">CompTIA Network+</a></li>
+            <li><a href="https://www.credly.com/badges/320fa07d-caed-45da-933d-b92d07b4963d/public_url" target="_blank" rel="noreferrer">CompTIA Security+</a></li>
+            <li><a href="https://www.credly.com/badges/1afba32d-58d8-4207-9ef4-0cdf3eb5474a/public_url" target="_blank" rel="noreferrer">Linux Essentials</a></li>
+          </ul>
+        </div>
+
+        <div class="card span-6">
+          <h3>Additional</h3>
+          <ul class="list">
+            <li><a href="https://www.credly.com/badges/803b30b7-584c-4fa1-a66c-4de590344baf/public_url" target="_blank" rel="noreferrer">CompTIA IT Operations Specialist (CIOS)</a></li>
+            <li><a href="https://www.credly.com/badges/489aa74c-e92c-4db0-8aed-58888017214d/public_url" target="_blank" rel="noreferrer">CompTIA Secure Infrastructure Specialist (CSIS)</a></li>
+            <li><a href="https://www.credly.com/badges/3c30f03e-2fe2-4f76-a116-e71edbff45fd/public_url" target="_blank" rel="noreferrer">Associate of ISC2 (SSCP)</a></li>
+            <li><span style="color: rgba(255,255,255,0.78);">ITIL 4 Foundation (listed on resume)</span></li>
+            <li><span style="color: rgba(255,255,255,0.78);">Project+ (listed on resume)</span></li>
+            <li><span style="color: rgba(255,255,255,0.78);">CySA+ / CSAP (listed on resume)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="section-title">
+        <h2>Resume</h2>
+        <div class="hint">PDF download + quick overview</div>
+      </div>
+
+      <div class="grid">
+        <div class="card span-8">
+          <h3>Snapshot</h3>
+          <p>
+            Experience across IT support and technical troubleshooting roles, combined with cybersecurity lab work and structured documentation.
+            Actively pursuing SOC Analyst / Junior Security Analyst opportunities while completing WGU coursework (expected March 2026).
+          </p>
+          <div class="cta" style="margin-top: 14px;">
+            <a class="btn primary" href="assets/Rylan_Stalnaker_Resume.pdf" download>Download Resume (PDF)</a>
+          </div>
+        </div>
+
+        <div class="card span-4">
+          <h3>Quick Links</h3>
+          <ul class="list">
+            <li><a href="#projects">Featured Projects</a></li>
+            <li><a href="#skills">Core Skills</a></li>
+            <li><a href="#certs">Certifications</a></li>
+            <li><a href="#connect">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect">
+      <div class="section-title">
+        <h2>Connect</h2>
+        <div class="hint">Direct, simple, professional</div>
+      </div>
+
+      <div class="grid">
+        <div class="card span-12">
+          <p style="margin:0; color: var(--muted);">
+            Email: <a href="mailto:rylan.stalnaker.cyber@gmail.com">rylan.stalnaker.cyber@gmail.com</a>
+            <span style="color: rgba(255,255,255,0.35);"> • </span>
+            LinkedIn: <a href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/" target="_blank" rel="noreferrer">rylan-stalnaker-6ba923180</a>
+            <span style="color: rgba(255,255,255,0.35);"> • </span>
+            GitHub: <a href="https://github.com/Rylandale515" target="_blank" rel="noreferrer">Rylandale515</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footrow">
+        <div>&copy; 2026 Rylan Stalnaker</div>
+        <div>Built on GitHub Pages</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
