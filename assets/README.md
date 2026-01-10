@@ -1,2 +1,2 @@
 # Assets
-Where Files and Images are stored.
+This folder contains static files used by my GitHub Pages site (resume PDF, images, etc.).
