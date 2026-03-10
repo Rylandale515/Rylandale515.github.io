@@ -333,9 +333,7 @@
         <div class="kicker">Aspiring SOC Analyst • Cybersecurity & IT • Oklahoma</div>
         <h1>Defensive-focused cybersecurity portfolio</h1>
         <p class="subhead">
-          Cybersecurity-focused IT professional pursuing a B.S. in Cybersecurity and Information Assurance at Western Governors University
-          (expected March 2026). Hands-on experience through labs and documentation that emphasize investigation methodology,
-          systems fundamentals, and security-minded troubleshooting.
+          Cybersecurity and Information Assurance graduate from Western Governors University with hands-on experience in SIEM labs, Active Directory administration, and SOC-aligned technical documentation.
         </p>
 
         <div class="cta">
@@ -367,72 +365,120 @@
       </div>
     </div>
 
-    <section id="projects">
-      <div class="section-title">
-        <h2>Featured Projects</h2>
-        <div class="hint">Curated highlights — case-study style</div>
+  <section id="projects">
+  <div class="section-title">
+    <h2>Featured Projects</h2>
+    <div class="hint">SOC-focused, case-study style</div>
+  </div>
+
+  <div class="grid">
+    <div class="card span-6">
+      <h3>
+        <a href="https://github.com/Rylandale515/siem-security-monitoring-lab" target="_blank" rel="noreferrer">
+          SIEM Security Monitoring Lab
+        </a>
+      </h3>
+      <p>
+        Designed and implemented a Wazuh-based SIEM lab in a private virtual environment to monitor Windows and Linux endpoints,
+        simulate suspicious activity, and analyze centralized alerts. This project emphasizes SOC workflows including detection,
+        investigation, incident documentation, and defensive security analysis.
+      </p>
+      <div class="pillrow">
+        <span class="pill">Wazuh</span>
+        <span class="pill">SIEM</span>
+        <span class="pill">Windows</span>
+        <span class="pill">Linux</span>
+        <span class="pill">Incident Analysis</span>
+        <span class="pill">MITRE ATT&CK</span>
       </div>
+      <ul class="list">
+        <li>Built a centralized monitoring environment using Ubuntu Server, Windows, and Linux systems.</li>
+        <li>Simulated brute-force authentication, privilege escalation, firewall changes, and file integrity events.</li>
+        <li>Documented detection findings through structured incident-style reporting aligned with SOC workflows.</li>
+      </ul>
+    </div>
 
-      <div class="grid">
-        <div class="card span-6">
-          <h3>
-            <a href="https://github.com/Rylandale515/AD-User-Management" target="_blank" rel="noreferrer">
-              Active Directory Identity & Access Management Lab
-            </a>
-          </h3>
-          <p>
-            Built a Windows Server 2019 Active Directory environment in Oracle VirtualBox to simulate enterprise identity operations.
-            Configured DNS/DHCP/NAT and automated user provisioning at scale using PowerShell. Documented troubleshooting steps
-            (including DNS routing issues) to reinforce secure domain administration patterns.
-          </p>
-          <div class="pillrow">
-            <span class="pill">Windows Server 2019</span>
-            <span class="pill">Active Directory</span>
-            <span class="pill">DNS / DHCP</span>
-            <span class="pill">NAT / RRAS</span>
-            <span class="pill">PowerShell</span>
-            <span class="pill">VirtualBox</span>
-          </div>
-          <ul class="list">
-            <li>Automated creation of 1,000+ users (lab simulation) with consistent naming and provisioning logic.</li>
-            <li>Validated domain join and authentication from a Windows 10 client.</li>
-            <li>Resolved misconfiguration impacting DNS/internet connectivity to restore expected network behavior.</li>
-          </ul>
-        </div>
-
-        <div class="card span-6">
-          <h3>
-            <a href="https://github.com/Rylandale515/THM-Write-Ups" target="_blank" rel="noreferrer">
-              TryHackMe SOC & Cyber Defense Write-Ups
-            </a>
-          </h3>
-          <p>
-            A repository of structured lab walkthroughs aligned to SOC workflows—focused on investigation methodology, network/service
-            enumeration, adversary tooling awareness, and defensive takeaways. Each write-up emphasizes clear steps, evidence, and lessons learned.
-          </p>
-          <div class="pillrow">
-            <span class="pill">Investigation workflow</span>
-            <span class="pill">Enumeration</span>
-            <span class="pill">Adversary tooling (lab)</span>
-            <span class="pill">Documentation</span>
-            <span class="pill">Defensive takeaways</span>
-          </div>
-          <ul class="list">
-            <li>Consistent write-up format: objectives → tools → evidence → takeaways.</li>
-            <li>Designed to be readable by both technical and non-technical audiences.</li>
-            <li>Focuses on repeatable process over “just getting the flag.”</li>
-          </ul>
-        </div>
-
-        <div class="card soft span-12">
-          <h3>What I’m building next</h3>
-          <p>
-            I’m continuing to add SOC-focused projects that simulate real monitoring and response work. The goal is to translate hands-on labs
-            into job-ready workflows: evidence collection, clear reporting, and defensive reasoning.
-          </p>
-        </div>
+    <div class="card span-6">
+      <h3>
+        <a href="https://github.com/Rylandale515/AD-User-Management" target="_blank" rel="noreferrer">
+          Active Directory Identity & Access Management Lab
+        </a>
+      </h3>
+      <p>
+        Built a Windows Server 2019 Active Directory environment in Oracle VirtualBox to simulate enterprise identity operations.
+        Configured DNS, DHCP, and NAT while automating user provisioning at scale with PowerShell to reinforce identity and access management fundamentals.
+      </p>
+      <div class="pillrow">
+        <span class="pill">Windows Server 2019</span>
+        <span class="pill">Active Directory</span>
+        <span class="pill">DNS / DHCP</span>
+        <span class="pill">NAT / RRAS</span>
+        <span class="pill">PowerShell</span>
+        <span class="pill">VirtualBox</span>
       </div>
-    </section>
+      <ul class="list">
+        <li>Automated creation of 1,000+ users in a lab-based domain environment.</li>
+        <li>Validated domain join, authentication, and account administration workflows.</li>
+        <li>Documented troubleshooting steps involving DNS and network configuration issues.</li>
+      </ul>
+    </div>
+
+    <div class="card span-6">
+      <h3>
+        <a href="https://github.com/Rylandale515/THM-Write-Ups" target="_blank" rel="noreferrer">
+          TryHackMe SOC & Cyber Defense Write-Ups
+        </a>
+      </h3>
+      <p>
+        A growing collection of structured lab write-ups focused on investigation methodology, network and service enumeration,
+        adversary behavior awareness, and defensive takeaways. These walkthroughs emphasize repeatable process, documentation,
+        and analytical reasoning rather than simply solving the room.
+      </p>
+      <div class="pillrow">
+        <span class="pill">SOC Workflow</span>
+        <span class="pill">Enumeration</span>
+        <span class="pill">Documentation</span>
+        <span class="pill">Blue Team Thinking</span>
+        <span class="pill">TryHackMe</span>
+      </div>
+      <ul class="list">
+        <li>Uses a consistent format built around objectives, tools, evidence, and lessons learned.</li>
+        <li>Designed to be readable by both technical and non-technical audiences.</li>
+        <li>Focuses on investigation process and defensive learning outcomes.</li>
+      </ul>
+    </div>
+
+    <div class="card soft span-6">
+      <h3>What these projects demonstrate</h3>
+      <p>
+        Together, these projects reflect my focus on security monitoring, investigation methodology, documentation quality,
+        and the systems knowledge needed to grow into a SOC Analyst or Junior Security Analyst role.
+      </p>
+      <div class="pillrow">
+        <span class="pill">Security Monitoring</span>
+        <span class="pill">Incident Response</span>
+        <span class="pill">Identity & Access</span>
+        <span class="pill">Systems Fundamentals</span>
+        <span class="pill">Technical Documentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<div class="card soft span-6">
+  <h3>Current Focus</h3>
+  <p>
+    I am continuing to expand this portfolio with SOC-focused projects that simulate
+    real monitoring and investigation workflows. Current areas of focus include
+    detection engineering, SIEM analysis, and structured incident documentation.
+  </p>
+  <div class="pillrow">
+    <span class="pill">SOC Detection</span>
+    <span class="pill">SIEM Investigation</span>
+    <span class="pill">Threat Detection</span>
+    <span class="pill">Incident Reporting</span>
+  </div>
+</div>
 
     <section id="skills">
       <div class="section-title">
