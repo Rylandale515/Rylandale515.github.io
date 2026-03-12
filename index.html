@@ -28,12 +28,23 @@
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+      position: relative;
+    }
+
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
       background:
         radial-gradient(1200px 600px at 20% 0%, rgba(126,234,216,0.12), transparent 55%),
         radial-gradient(900px 500px at 80% 10%, rgba(159,211,199,0.10), transparent 50%),
-        radial-gradient(900px 700px at 50% 100%, rgba(126,234,216,0.06), transparent 60%),
+        radial-gradient(1200px 900px at 50% 100%, rgba(126,234,216,0.06), transparent 65%),
         var(--bg);
-      line-height: 1.55;
+      background-repeat: no-repeat;
     }
 
     a{
@@ -362,10 +373,19 @@
           <p>Open to remote / hybrid opportunities</p>
           <div class="small">Entry-level SOC Analyst • Junior Security Analyst</div>
         </div>
+        
+        <div class="mini">
+          <h3>Training Platform</h3>
+          <p>TryHackMe Profile</p>
+          <div class="small" style="margin-bottom: 12px;">Hands-on SOC and defensive security labs</div>
+            <iframe
+              src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2177519"
+              style="border:none; width:100%; max-width:320px; height:110px; overflow:hidden; border-radius:12px;"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
       </div>
-    </div>
-
-  <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2177519" style='border:none;'></iframe>
 
   <section id="projects">
   <div class="section-title">
