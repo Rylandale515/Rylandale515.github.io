@@ -4,8 +4,8 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rylan Stalnaker | Cybersecurity Portfolio</title>
-  <meta name="description" content="Rylan Stalnaker — Aspiring SOC Analyst. Cybersecurity portfolio featuring Active Directory lab work, TryHackMe write-ups, and certifications." />
+  <title>Rylan Stalnaker | SOC Analyst Portfolio</title>
+  <meta name="description" content="Rylan Stalnaker — Entry-level SOC Analyst. Cybersecurity portfolio featuring Wazuh SIEM lab, MITRE ATT&CK analysis, NIST 800-61 incident documentation, and Active Directory lab work." />
   <style>
     :root{
       --bg: #0b1220;
@@ -47,10 +47,7 @@
       background-repeat: no-repeat;
     }
 
-    a{
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a{ color: var(--accent); text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
     .wrap{
@@ -59,7 +56,7 @@
       padding: 28px 18px 64px;
     }
 
-    /* Top nav */
+    /* Nav */
     .nav{
       display: flex;
       align-items: center;
@@ -142,14 +139,14 @@
     }
     h1{
       margin: 14px 0 8px;
-      font-size: clamp(30px, 4vw, 44px);
+      font-size: clamp(28px, 4vw, 42px);
       line-height: 1.15;
       letter-spacing: -0.6px;
     }
     .subhead{
       margin: 0;
       color: var(--muted);
-      font-size: 16.5px;
+      font-size: 16px;
       max-width: 62ch;
     }
     .cta{
@@ -173,10 +170,7 @@
       cursor: pointer;
       text-decoration: none;
     }
-    .btn:hover{
-      background: rgba(255,255,255,0.08);
-      text-decoration: none;
-    }
+    .btn:hover{ background: rgba(255,255,255,0.08); text-decoration: none; }
     .btn.primary{
       background: linear-gradient(135deg, rgba(126,234,216,0.20), rgba(159,211,199,0.12));
       border-color: rgba(126,234,216,0.35);
@@ -185,10 +179,7 @@
       background: linear-gradient(135deg, rgba(126,234,216,0.28), rgba(159,211,199,0.14));
     }
 
-    .side{
-      display: grid;
-      gap: 12px;
-    }
+    .side{ display: grid; gap: 12px; }
     .mini{
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.035);
@@ -197,7 +188,7 @@
     }
     .mini h3{
       margin: 0 0 6px;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
       font-weight: 750;
       letter-spacing: 0.3px;
@@ -213,14 +204,12 @@
       margin-top: 6px;
       color: var(--muted-2);
       font-weight: 550;
-      font-size: 13.5px;
+      font-size: 13px;
     }
 
     /* Sections */
-    section{
-      margin-top: 22px;
-      padding: 0 6px;
-    }
+    section{ margin-top: 22px; padding: 0 6px; }
+
     .section-title{
       display: flex;
       align-items: baseline;
@@ -228,16 +217,8 @@
       gap: 14px;
       margin: 26px 0 12px;
     }
-    .section-title h2{
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-    }
-    .section-title .hint{
-      color: var(--muted-2);
-      font-size: 13.5px;
-      font-weight: 550;
-    }
+    .section-title h2{ margin: 0; font-size: 18px; letter-spacing: 0.2px; }
+    .section-title .hint{ color: var(--muted-2); font-size: 13.5px; font-weight: 550; }
 
     .grid{
       display: grid;
@@ -250,9 +231,8 @@
       border-radius: var(--radius);
       padding: 18px;
     }
-    .card.soft{
-      background: rgba(255,255,255,0.03);
-    }
+    .card.soft{ background: rgba(255,255,255,0.03); }
+    .card.accent-border{ border-color: rgba(126,234,216,0.25); }
     .span-6{ grid-column: span 6; }
     .span-4{ grid-column: span 4; }
     .span-8{ grid-column: span 8; }
@@ -261,23 +241,10 @@
       .span-6, .span-4, .span-8{ grid-column: span 12; }
     }
 
-    .card h3{
-      margin: 0 0 6px;
-      font-size: 16px;
-      letter-spacing: 0.1px;
-    }
-    .card p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14.5px;
-    }
+    .card h3{ margin: 0 0 6px; font-size: 16px; letter-spacing: 0.1px; }
+    .card p{ margin: 0; color: var(--muted); font-size: 14.5px; }
 
-    .pillrow{
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .pillrow{ margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
     .pill{
       font-size: 12.5px;
       font-weight: 650;
@@ -287,23 +254,27 @@
       padding: 6px 10px;
       border-radius: 999px;
     }
-
-    .list{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14.5px;
+    .pill.hi{
+      color: var(--accent);
+      border-color: rgba(126,234,216,0.30);
+      background: rgba(126,234,216,0.06);
     }
+
+    .list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
     .list li{ margin: 6px 0; }
 
-    .split{
-      display: grid;
-      gap: 14px;
-      grid-template-columns: 1fr 1fr;
+    /* Detection table */
+    .det-table{ width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13.5px; }
+    .det-table th{
+      text-align: left;
+      color: var(--muted-2);
+      font-weight: 650;
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
     }
-    @media (max-width: 920px){
-      .split{ grid-template-columns: 1fr; }
-    }
+    .det-table td{ padding: 7px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--muted); }
+    .det-table td:first-child{ color: var(--accent); font-family: monospace; font-size: 13px; }
+    .det-table tr:last-child td{ border-bottom: none; }
 
     footer{
       margin-top: 36px;
@@ -324,324 +295,345 @@
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Rylan Stalnaker</span>
-      </div>
-      <div class="links">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#certs">Certifications</a>
-        <a href="#resume">Resume</a>
-        <a href="#connect">Connect</a>
+<div class="wrap">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Rylan Stalnaker</span>
+    </div>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certifications</a>
+      <a href="#resume">Resume</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="hero-card">
+      <div class="kicker">SOC Analyst &nbsp;•&nbsp; Security Operations &nbsp;•&nbsp; Oklahoma</div>
+      <h1>Threat detection, incident analysis, and SOC documentation</h1>
+      <p class="subhead">
+        B.S. Cybersecurity &amp; Information Assurance (WGU, 2026) with hands-on experience
+        deploying Wazuh SIEM, simulating real-world attacks, and documenting findings aligned
+        to NIST SP 800-61 and MITRE ATT&amp;CK. Holding CySA+, PenTest+, Security+, and more.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="assets/Rylan_Stalnaker_Resume.pdf" download>Download Resume (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/Rylandale515" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </div>
 
-    <div class="hero" id="top">
-      <div class="hero-card">
-        <div class="kicker">Aspiring SOC Analyst • Cybersecurity & IT • Oklahoma</div>
-        <h1>Defensive-focused cybersecurity portfolio</h1>
-        <p class="subhead">
-          Cybersecurity and Information Assurance graduate from Western Governors University with hands-on experience in SIEM labs, Active Directory administration, and SOC-aligned technical documentation.
-        </p>
-
-        <div class="cta">
-          <!-- Update this path to match your repo -->
-          <a class="btn primary" href="assets/Rylan_Stalnaker_Resume.pdf" download>Download Resume (PDF)</a>
-          <a class="btn" href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="https://github.com/Rylandale515" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
+    <div class="side">
+      <div class="mini">
+        <h3>Frameworks</h3>
+        <p>NIST SP 800-61 &amp; MITRE ATT&amp;CK</p>
+        <div class="small">Incident response lifecycle • technique &amp; sub-technique mapping • detection analysis</div>
       </div>
-
-      <div class="side">
-        <div class="mini">
-          <h3>Focus</h3>
-          <p>Security monitoring and SOC fundamentals</p>
-          <div class="small">Incident response concepts • vulnerability awareness • documentation discipline</div>
-        </div>
-
-        <div class="mini">
-          <h3>Strengths</h3>
-          <p>Systems + networking foundations</p>
-          <div class="small">Windows Server / Active Directory • Linux fundamentals • troubleshooting</div>
-        </div>
-
-        <div class="mini">
-          <h3>Availability</h3>
-          <p>Open to remote / hybrid opportunities</p>
-          <div class="small">Entry-level SOC Analyst • Junior Security Analyst</div>
-        </div>
-        
-        <div class="mini">
-          <h3>Training Platform</h3>
-          <p>TryHackMe Profile</p>
-          <div class="small" style="margin-bottom: 12px;">Hands-on SOC and defensive security labs</div>
-            <iframe
-              src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2177519"
-              style="border:none; width:100%; max-width:320px; height:110px; overflow:hidden; border-radius:12px;"
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
+      <div class="mini">
+        <h3>Core Tools</h3>
+        <p>Wazuh, Splunk, Wireshark, Nmap</p>
+        <div class="small">SIEM deployment • log correlation • alert triage • endpoint monitoring</div>
       </div>
+      <div class="mini">
+        <h3>Availability</h3>
+        <p>Open to remote / hybrid opportunities</p>
+        <div class="small">Entry-level SOC Analyst • Tier 1 • Junior Security Analyst</div>
+      </div>
+      <div class="mini">
+        <h3>Training Platform</h3>
+        <p>TryHackMe — SOC Level 1 &amp; Cybersecurity 101</p>
+        <div class="small" style="margin-bottom: 12px;">Hands-on defensive security and investigation labs</div>
+        <iframe
+          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2177519"
+          style="border:none; width:100%; max-width:320px; height:110px; overflow:hidden; border-radius:12px;"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
 
+  <!-- PROJECTS -->
   <section id="projects">
-  <div class="section-title">
-    <h2>Featured Projects</h2>
-    <div class="hint">SOC-focused, case-study style</div>
-  </div>
-
-  <div class="grid">
-    <div class="card span-6">
-      <h3>
-        <a href="https://github.com/Rylandale515/siem-security-monitoring-lab" target="_blank" rel="noreferrer">
-          SIEM Security Monitoring Lab
-        </a>
-      </h3>
-      <p>
-        Designed and implemented a Wazuh-based SIEM lab in a private virtual environment to monitor Windows and Linux endpoints,
-        simulate suspicious activity, and analyze centralized alerts. This project emphasizes SOC workflows including detection,
-        investigation, incident documentation, and defensive security analysis.
-      </p>
-      <div class="pillrow">
-        <span class="pill">Wazuh</span>
-        <span class="pill">SIEM</span>
-        <span class="pill">Windows</span>
-        <span class="pill">Linux</span>
-        <span class="pill">Incident Analysis</span>
-        <span class="pill">MITRE ATT&CK</span>
-      </div>
-      <ul class="list">
-        <li>Built a centralized monitoring environment using Ubuntu Server, Windows, and Linux systems.</li>
-        <li>Simulated brute-force authentication, privilege escalation, firewall changes, and file integrity events.</li>
-        <li>Documented detection findings through structured incident-style reporting aligned with SOC workflows.</li>
-      </ul>
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <div class="hint">Documented, verifiable, SOC-relevant</div>
     </div>
 
-    <div class="card span-6">
-      <h3>
-        <a href="https://github.com/Rylandale515/AD-User-Management" target="_blank" rel="noreferrer">
-          Active Directory Identity & Access Management Lab
-        </a>
-      </h3>
-      <p>
-        Built a Windows Server 2019 Active Directory environment in Oracle VirtualBox to simulate enterprise identity operations.
-        Configured DNS, DHCP, and NAT while automating user provisioning at scale with PowerShell to reinforce identity and access management fundamentals.
-      </p>
-      <div class="pillrow">
-        <span class="pill">Windows Server 2019</span>
-        <span class="pill">Active Directory</span>
-        <span class="pill">DNS / DHCP</span>
-        <span class="pill">NAT / RRAS</span>
-        <span class="pill">PowerShell</span>
-        <span class="pill">VirtualBox</span>
+    <div class="grid">
+
+      <!-- SIEM Lab -->
+      <div class="card accent-border span-12">
+        <h3>
+          <a href="https://github.com/Rylandale515/siem-security-monitoring-lab" target="_blank" rel="noreferrer">
+            SIEM Security Monitoring Lab — WGU Capstone
+          </a>
+        </h3>
+        <p>
+          Designed and deployed a centralized Wazuh SIEM on Ubuntu Server with Windows and Linux endpoints
+          connected via an isolated NAT virtual network. Simulated real-world attack scenarios, performed
+          alert triage and log analysis, and documented findings in structured incident reports aligned
+          with NIST SP 800-61 and mapped to MITRE ATT&amp;CK.
+        </p>
+        <div class="pillrow">
+          <span class="pill hi">Wazuh SIEM</span>
+          <span class="pill hi">NIST SP 800-61</span>
+          <span class="pill hi">MITRE ATT&amp;CK</span>
+          <span class="pill">Ubuntu Server</span>
+          <span class="pill">Windows</span>
+          <span class="pill">Linux</span>
+          <span class="pill">Alert Triage</span>
+          <span class="pill">Incident Analysis</span>
+          <span class="pill">QEMU/KVM</span>
+        </div>
+
+        <table class="det-table">
+          <thead>
+            <tr>
+              <th>MITRE Technique</th>
+              <th>Simulation</th>
+              <th>Wazuh Detection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>T1110.001</td>
+              <td>Brute-force login against Windows endpoint (account: Jane Doe)</td>
+              <td>Auth anomaly alert — Event IDs 4625 / 4624</td>
+            </tr>
+            <tr>
+              <td>T1136.001 / T1098</td>
+              <td>New account created, added to local Administrators group</td>
+              <td>Rule ID 60154, Level 12 — "Administrators Group Changed"</td>
+            </tr>
+            <tr>
+              <td>T1562.004</td>
+              <td>Firewall disabled via <code style="font-size:12px; color: var(--accent-2);">Set-NetFirewallProfile -Enabled False</code></td>
+              <td>Security policy change alert — Event ID 4719</td>
+            </tr>
+            <tr>
+              <td>T1222.002</td>
+              <td>File permissions modified on sensitive files — Linux endpoint</td>
+              <td>Wazuh FIM alert — attribute change on monitored path</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <ul class="list">
-        <li>Automated creation of 1,000+ users in a lab-based domain environment.</li>
-        <li>Validated domain join, authentication, and account administration workflows.</li>
-        <li>Documented troubleshooting steps involving DNS and network configuration issues.</li>
-      </ul>
+
+      <!-- AD Lab -->
+      <div class="card span-6">
+        <h3>
+          <a href="https://github.com/Rylandale515/AD-User-Management" target="_blank" rel="noreferrer">
+            Active Directory Identity &amp; Access Management Lab
+          </a>
+        </h3>
+        <p>
+          Built a Windows Server 2019 Active Directory environment to simulate enterprise identity operations.
+          Configured DNS, DHCP, and NAT/RRAS. Automated provisioning of 1,000+ domain users via PowerShell
+          with consistent naming standards and group membership enforcement.
+        </p>
+        <div class="pillrow">
+          <span class="pill">Windows Server 2019</span>
+          <span class="pill">Active Directory</span>
+          <span class="pill">DNS / DHCP</span>
+          <span class="pill">NAT / RRAS</span>
+          <span class="pill">PowerShell</span>
+        </div>
+        <ul class="list">
+          <li>Validated domain join, authentication, and DNS resolution on a Windows 10 client endpoint.</li>
+          <li>Documented troubleshooting steps for DNS and network configuration issues.</li>
+          <li>Reinforced least-privilege and IAM concepts through hands-on group policy configuration.</li>
+        </ul>
+      </div>
+
+      <!-- THM -->
+      <div class="card span-6">
+        <h3>
+          <a href="https://github.com/Rylandale515/THM-Write-Ups" target="_blank" rel="noreferrer">
+            TryHackMe — SOC &amp; Security Lab Write-Ups
+          </a>
+        </h3>
+        <p>
+          Structured write-ups for 10+ completed labs covering offensive tooling, web fundamentals, and
+          network analysis — each documented with investigation methodology, tool output, and defensive
+          takeaways aligned to SOC analyst workflows. Actively progressing through the SOC Level 1 path.
+        </p>
+        <div class="pillrow">
+          <span class="pill">SOC Level 1</span>
+          <span class="pill">Investigation Methodology</span>
+          <span class="pill">Defensive Analysis</span>
+          <span class="pill">Metasploit</span>
+          <span class="pill">Burp Suite</span>
+          <span class="pill">Hydra</span>
+        </div>
+        <ul class="list">
+          <li>Every write-up includes a defensive takeaways section connecting attacker behavior to detection opportunities.</li>
+          <li>Consistent format: objectives, tools, enumeration/exploitation, and security-relevant analysis.</li>
+          <li>Current focus: Windows Event Log analysis, phishing investigation, and network traffic analysis.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title">
+      <h2>Core Skills</h2>
+      <div class="hint">Lab-verified, framework-aligned</div>
     </div>
 
-    <div class="card span-6">
-      <h3>
-        <a href="https://github.com/Rylandale515/THM-Write-Ups" target="_blank" rel="noreferrer">
-          TryHackMe SOC & Cyber Defense Write-Ups
-        </a>
-      </h3>
-      <p>
-        A growing collection of structured lab write-ups focused on investigation methodology, network and service enumeration,
-        adversary behavior awareness, and defensive takeaways. These walkthroughs emphasize repeatable process, documentation,
-        and analytical reasoning rather than simply solving the room.
-      </p>
-      <div class="pillrow">
-        <span class="pill">SOC Workflow</span>
-        <span class="pill">Enumeration</span>
-        <span class="pill">Documentation</span>
-        <span class="pill">Blue Team Thinking</span>
-        <span class="pill">TryHackMe</span>
+    <div class="grid">
+      <div class="card span-4">
+        <h3>Security Operations</h3>
+        <p>SIEM-based monitoring, alert triage, and incident investigation.</p>
+        <ul class="list">
+          <li>Alert triage &amp; false positive identification</li>
+          <li>Log analysis &amp; event correlation</li>
+          <li>Incident response — NIST SP 800-61</li>
+          <li>MITRE ATT&amp;CK technique mapping</li>
+          <li>Detection tuning &amp; documentation</li>
+        </ul>
       </div>
-      <ul class="list">
-        <li>Uses a consistent format built around objectives, tools, evidence, and lessons learned.</li>
-        <li>Designed to be readable by both technical and non-technical audiences.</li>
-        <li>Focuses on investigation process and defensive learning outcomes.</li>
-      </ul>
+
+      <div class="card span-4">
+        <h3>Systems &amp; Identity</h3>
+        <p>Hands-on with Windows and Linux environments.</p>
+        <ul class="list">
+          <li>Windows Event Logs (4624, 4625, 4720, 4732…)</li>
+          <li>Active Directory — users, groups, GPO</li>
+          <li>Linux CLI, file integrity, service management</li>
+          <li>Authentication, MFA, least-privilege concepts</li>
+          <li>PowerShell scripting &amp; automation</li>
+        </ul>
+      </div>
+
+      <div class="card span-4">
+        <h3>Networking &amp; Tools</h3>
+        <p>Solid fundamentals that directly support SOC triage work.</p>
+        <ul class="list">
+          <li>TCP/IP, DNS, DHCP, HTTP/S, SSH, SMB</li>
+          <li>Wazuh, Splunk, Wireshark</li>
+          <li>Nmap, Metasploit, Hydra, Gobuster, Burp Suite</li>
+          <li>QEMU/KVM virtualization</li>
+          <li>Azure (in progress)</li>
+        </ul>
+      </div>
+
+      <div class="card soft span-12">
+        <h3>Documentation &amp; Communication</h3>
+        <p>
+          Every lab and project in this portfolio is documented to a standard that mirrors real SOC output —
+          structured incident reports following NIST SP 800-61 phases, MITRE ATT&amp;CK-mapped findings,
+          Windows Event ID citations, and audit-ready write-ups. Clear documentation isn't a soft skill here;
+          it's demonstrated in every linked repo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="section-title">
+      <h2>Certifications</h2>
+      <div class="hint">Verified via Credly</div>
     </div>
 
-    <div class="card soft span-6">
-      <h3>What these projects demonstrate</h3>
-      <p>
-        Together, these projects reflect my focus on security monitoring, investigation methodology, documentation quality,
-        and the systems knowledge needed to grow into a SOC Analyst or Junior Security Analyst role.
-      </p>
-      <div class="pillrow">
-        <span class="pill">Security Monitoring</span>
-        <span class="pill">Incident Response</span>
-        <span class="pill">Identity & Access</span>
-        <span class="pill">Systems Fundamentals</span>
-        <span class="pill">Technical Documentation</span>
+    <div class="grid">
+      <div class="card span-6">
+        <h3>Security-Focused</h3>
+        <ul class="list">
+          <li><a href="https://www.credly.com/badges/0224318e-7058-4a7e-bead-908818b1a0f4/public_url" target="_blank" rel="noreferrer">CompTIA CySA+</a> — 09/2025</li>
+          <li><a href="https://www.credly.com/badges/3d717d78-21b3-463d-be5c-7706a8540892/public_url" target="_blank" rel="noreferrer">CompTIA PenTest+</a> — 01/2026</li>
+          <li><a href="https://www.credly.com/badges/320fa07d-caed-45da-933d-b92d07b4963d/public_url" target="_blank" rel="noreferrer">CompTIA Security+</a> — 06/2024</li>
+          <li><a href="https://www.credly.com/badges/cb75e7f0-4df5-49da-b456-eb5da5d434df/public_url" target="_blank" rel="noreferrer">CompTIA Security Analytics Professional</a></li>
+          <li><a href="https://www.credly.com/badges/9df2ca6d-e78a-4fe8-ab8f-111387a932fa/public_url" target="_blank" rel="noreferrer">CompTIA Network Vulnerability Assessment Professional</a></li>
+          <li><a href="https://www.credly.com/badges/dd3b8d9f-1c22-4a88-bdc2-d65cd977af0d/public_url" target="_blank" rel="noreferrer">CompTIA Network Security Professional</a></li>
+          <li><a href="https://www.credly.com/badges/3c30f03e-2fe2-4f76-a116-e71edbff45fd/public_url" target="_blank" rel="noreferrer">Associate of ISC2 (SSCP)</a> — 02/2025</li>
+        </ul>
+      </div>
+
+      <div class="card span-6">
+        <h3>Foundational &amp; Additional</h3>
+        <ul class="list">
+          <li><a href="https://www.credly.com/badges/201270ac-617d-45cd-a5d9-486265be596b/public_url" target="_blank" rel="noreferrer">CompTIA Network+</a> — 01/2024</li>
+          <li><a href="https://www.credly.com/badges/8233d4c9-208d-4504-9d3d-0d07ac6722d9/public_url" target="_blank" rel="noreferrer">CompTIA A+</a> — 09/2023</li>
+          <li><a href="https://www.credly.com/badges/803b30b7-584c-4fa1-a66c-4de590344baf/public_url" target="_blank" rel="noreferrer">CompTIA IT Operations Specialist</a></li>
+          <li><a href="https://www.credly.com/badges/489aa74c-e92c-4db0-8aed-58888017214d/public_url" target="_blank" rel="noreferrer">CompTIA Secure Infrastructure Specialist</a></li>
+          <li><a href="https://www.credly.com/badges/494c5038-1c0f-4408-8a08-86f8122a324d/public_url" target="_blank" rel="noreferrer">CompTIA Project+</a> — 07/2025</li>
+          <li>ITIL® 4 Foundation — <a href="assets/e-cert-1.pdf" target="_blank" rel="noreferrer">View Certificate</a></li>
+          <li><a href="#" target="_blank" rel="noreferrer">Linux Essentials</a> — 12/2024</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-    
-<div class="card soft span-6">
-  <h3>Current Focus</h3>
-  <p>
-    I am continuing to expand this portfolio with SOC-focused projects that simulate
-    real monitoring and investigation workflows. Current areas of focus include
-    detection engineering, SIEM analysis, and structured incident documentation.
-  </p>
-  <div class="pillrow">
-    <span class="pill">SOC Detection</span>
-    <span class="pill">SIEM Investigation</span>
-    <span class="pill">Threat Detection</span>
-    <span class="pill">Incident Reporting</span>
-  </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="section-title">
+      <h2>Resume</h2>
+      <div class="hint">PDF download</div>
+    </div>
+
+    <div class="grid">
+      <div class="card span-8">
+        <h3>Rylan Stalnaker — SOC Analyst</h3>
+        <p>
+          B.S. Cybersecurity &amp; Information Assurance (WGU, March 2026). Hands-on SIEM lab experience
+          with Wazuh, documented incident analysis aligned to NIST SP 800-61 and MITRE ATT&amp;CK,
+          and a CompTIA cert stack including CySA+, PenTest+, and Security+. Background in IT support,
+          log analysis, and technical documentation. Actively seeking Tier 1 SOC Analyst and Junior
+          Security Analyst roles.
+        </p>
+        <div class="cta" style="margin-top: 14px;">
+          <a class="btn primary" href="assets/Rylan_Stalnaker_Resume.pdf" download>Download Resume (PDF)</a>
+        </div>
+      </div>
+
+      <div class="card span-4">
+        <h3>Quick Links</h3>
+        <ul class="list">
+          <li><a href="#projects">Featured Projects</a></li>
+          <li><a href="#skills">Core Skills</a></li>
+          <li><a href="#certs">Certifications</a></li>
+          <li><a href="#connect">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="section-title">
+      <h2>Connect</h2>
+      <div class="hint">Direct and professional</div>
+    </div>
+
+    <div class="grid">
+      <div class="card span-12">
+        <p style="margin:0; color: var(--muted);">
+          Email: <a href="mailto:rylan.stalnaker.cyber@gmail.com">rylan.stalnaker.cyber@gmail.com</a>
+          <span style="color: rgba(255,255,255,0.35);"> &nbsp;•&nbsp; </span>
+          LinkedIn: <a href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/" target="_blank" rel="noreferrer">rylan-stalnaker-6ba923180</a>
+          <span style="color: rgba(255,255,255,0.35);"> &nbsp;•&nbsp; </span>
+          GitHub: <a href="https://github.com/Rylandale515" target="_blank" rel="noreferrer">Rylandale515</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footrow">
+      <div>&copy; 2026 Rylan Stalnaker</div>
+      <div>Built on GitHub Pages</div>
+    </div>
+  </footer>
+
 </div>
-
-    <section id="skills">
-      <div class="section-title">
-        <h2>Core Skills</h2>
-        <div class="hint">Curated — built for recruiters and ATS</div>
-      </div>
-
-      <div class="grid">
-        <div class="card span-4">
-          <h3>Security Operations</h3>
-          <p>Foundational SOC-aligned knowledge and lab experience.</p>
-          <ul class="list">
-            <li>Incident response concepts</li>
-            <li>Security monitoring fundamentals</li>
-            <li>Vulnerability assessment awareness</li>
-            <li>Threat analysis mindset (lab context)</li>
-          </ul>
-        </div>
-
-        <div class="card span-4">
-          <h3>Systems & Identity</h3>
-          <p>Hands-on with Windows environments and identity administration.</p>
-          <ul class="list">
-            <li>Windows Server 2019 administration</li>
-            <li>Active Directory users/groups (lab)</li>
-            <li>Authentication / authorization concepts</li>
-            <li>Linux fundamentals and CLI usage</li>
-          </ul>
-        </div>
-
-        <div class="card span-4">
-          <h3>Networking & Tooling</h3>
-          <p>Strong fundamentals that translate well to SOC triage.</p>
-          <ul class="list">
-            <li>TCP/IP, DNS, DHCP, SMB, SSH</li>
-            <li>Service enumeration fundamentals</li>
-            <li>Nmap (lab)</li>
-            <li>Metasploit familiarity (lab)</li>
-          </ul>
-        </div>
-
-        <div class="card soft span-12">
-          <h3>Documentation & Communication</h3>
-          <p>
-            I prioritize clear documentation and repeatable methods—writing findings so they’re useful to both technical teams
-            and stakeholders. (This aligns with how real SOC work is handed off between shifts and teams.)
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="certs">
-      <div class="section-title">
-        <h2>Certifications</h2>
-        <div class="hint">Verified via Credly where available</div>
-      </div>
-
-      <div class="grid">
-        <div class="card span-6">
-          <h3>Core Certifications</h3>
-          <ul class="list">
-            <li><a href="https://www.credly.com/badges/8233d4c9-208d-4504-9d3d-0d07ac6722d9/public_url" target="_blank" rel="noreferrer">CompTIA A+</a></li>
-            <li><a href="https://www.credly.com/badges/201270ac-617d-45cd-a5d9-486265be596b/public_url" target="_blank" rel="noreferrer">CompTIA Network+</a></li>
-            <li><a href="https://www.credly.com/badges/320fa07d-caed-45da-933d-b92d07b4963d/public_url" target="_blank" rel="noreferrer">CompTIA Security+</a></li>
-            <li><a href="https://www.credly.com/badges/494c5038-1c0f-4408-8a08-86f8122a324d/public_url" target="_blank" rel="noreferrer">CompTIA Project+</a></li>
-            <li><a href="https://www.credly.com/badges/0224318e-7058-4a7e-bead-908818b1a0f4/public_url" target="_blank" rel="noreferrer">CompTIA CySA+</a></li>
-            <li><a href="https://www.credly.com/badges/3d717d78-21b3-463d-be5c-7706a8540892/public_url" target="_blank" rel="noreferrer">CompTIA PenTest+</a></li>
-            <li><a href="https://www.credly.com/badges/1afba32d-58d8-4207-9ef4-0cdf3eb5474a/public_url" target="_blank" rel="noreferrer">Linux Essentials</a></li>
-          </ul>
-        </div>
-
-        <div class="card span-6">
-          <h3>Additional</h3>
-          <ul class="list">
-            <li><a href="https://www.credly.com/badges/803b30b7-584c-4fa1-a66c-4de590344baf/public_url" target="_blank" rel="noreferrer">CompTIA IT Operations Specialist (CIOS)</a></li>
-            <li><a href="https://www.credly.com/badges/489aa74c-e92c-4db0-8aed-58888017214d/public_url" target="_blank" rel="noreferrer">CompTIA Secure Infrastructure Specialist (CSIS)</a></li>
-            <li><a href="https://www.credly.com/badges/3c30f03e-2fe2-4f76-a116-e71edbff45fd/public_url" target="_blank" rel="noreferrer">Associate of ISC2 (SSCP)</a></li>
-            <li>ITIL® 4 Foundation —<a href="assets/e-cert-1.pdf" target="_blank" rel="noreferrer">View Certificate (PDF)</a></li>
-            <li><a href="https://www.credly.com/badges/cb75e7f0-4df5-49da-b456-eb5da5d434df/public_url" target="_blank" rel="noreferrer">CompTIA Security Analytics Professional (CSAP)</a></li>
-            <li><a href="https://www.credly.com/badges/9df2ca6d-e78a-4fe8-ab8f-111387a932fa/public_url" target="_blank" rel="noreferrer">CompTIA Network Vulnerability Assessment Professional (CNVP)</a></li>
-            <li><a href="https://www.credly.com/badges/dd3b8d9f-1c22-4a88-bdc2-d65cd977af0d/public_url" target="_blank" rel="noreferrer">CompTIA Network Security Professional (CNSP)</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="resume">
-      <div class="section-title">
-        <h2>Resume</h2>
-        <div class="hint">PDF download + quick overview</div>
-      </div>
-
-      <div class="grid">
-        <div class="card span-8">
-          <h3>Snapshot</h3>
-          <p>
-            Experience across IT support and technical troubleshooting roles, combined with cybersecurity lab work and structured documentation.
-            Actively pursuing SOC Analyst / Junior Security Analyst opportunities while completing WGU coursework (expected March 2026).
-          </p>
-          <div class="cta" style="margin-top: 14px;">
-            <a class="btn primary" href="assets/Rylan_Stalnaker_Resume.pdf" download>Download Resume (PDF)</a>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <h3>Quick Links</h3>
-          <ul class="list">
-            <li><a href="#projects">Featured Projects</a></li>
-            <li><a href="#skills">Core Skills</a></li>
-            <li><a href="#certs">Certifications</a></li>
-            <li><a href="#connect">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="connect">
-      <div class="section-title">
-        <h2>Connect</h2>
-        <div class="hint">Direct, simple, professional</div>
-      </div>
-
-      <div class="grid">
-        <div class="card span-12">
-          <p style="margin:0; color: var(--muted);">
-            Email: <a href="mailto:rylan.stalnaker.cyber@gmail.com">rylan.stalnaker.cyber@gmail.com</a>
-            <span style="color: rgba(255,255,255,0.35);"> • </span>
-            LinkedIn: <a href="https://www.linkedin.com/in/rylan-stalnaker-6ba923180/" target="_blank" rel="noreferrer">rylan-stalnaker-6ba923180</a>
-            <span style="color: rgba(255,255,255,0.35);"> • </span>
-            GitHub: <a href="https://github.com/Rylandale515" target="_blank" rel="noreferrer">Rylandale515</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footrow">
-        <div>&copy; 2026 Rylan Stalnaker</div>
-        <div>Built on GitHub Pages</div>
-      </div>
-    </footer>
-  </div>
 </body>
 </html>
